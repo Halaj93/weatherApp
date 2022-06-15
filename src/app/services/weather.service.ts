@@ -5,24 +5,26 @@ import { environment } from 'src/environments/environment.prod';
 import { WeatherData } from '../models/weather.models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WeatherService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getWeatherData(cityName: string): Observable<WeatherData> {
-   return this.http.get<WeatherData>(environment.weatherApiBaseUrl, {
+    return this.http.get<WeatherData>(environment.weatherApiBaseUrl, {
       headers: new HttpHeaders()
-      .set(environment.XRapidAPIHostHeaderName, environment.
-       XRapidAPIHostHeaderValue)
-       .set(environment.XRapidAPIKeyHeaderName, environment.XRapidAPIKeyHeaderValue),
-       params: new HttpParams()
-       .set('q', cityName)
-       .set('units', 'metric')
-       .set('mode', 'jason')
-    })
-     
-    }
+        .set(
+          environment.XRapidAPIHostHeaderName,
+          environment.XRapidAPIHostHeaderValue
+        )
+        .set(
+          environment.XRapidAPIKeyHeaderName,
+          environment.XRapidAPIKeyHeaderValue
+        ),
+      params: new HttpParams()
+        .set('q', cityName)
+        .set('units', 'metric')
+        .set('mode', 'jason'),
+    });
   }
-
+}
