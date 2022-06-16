@@ -1,6 +1,8 @@
 :root {
-  --green-1: #0c8820;
-  --green-2: #4ea507;
+  --purple-1: #40407a;
+  --purple-2: #706fd3;
+  --purple-3: #2c2c54;
+
   --yellow-1: #fac742;
   --white: #fff;
   --grey-1: #ededed;
@@ -19,8 +21,7 @@ body {
   font-size: 16px;
   width: 100%;
   height: 100vh;
-  background-color: var(--green-1);
-
+  background-color: var(--purple-1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +30,7 @@ body {
 .container {
   width: 400px;
   height: 80vh;
-  background-color: var(--green-2);
+  background-color: var(--purple-2);
   border-radius: 20px;
   box-shadow: 10px 10px 10px var(--shadow-dark);
 }
